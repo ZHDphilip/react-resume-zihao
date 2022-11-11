@@ -84,12 +84,36 @@ export interface PortfolioItem {
 }
 
 /**
- * Resume section
+ * Resume section - non-tech 
  */
-export interface TimelineItem {
+export interface EducationTimelineItem {
+  date: string;
+  location: string;
+  gpa: string;
+  relatedCourses: string;
+  title: string;
+  honor: string;
+}
+
+/**
+ * Resume section - tech
+ */
+export interface TechTimelineItem {
   date: string;
   location: string;
   title: string;
+  language: string;
+  content: JSX.Element;
+}
+
+/**
+ * Resume section - leadership
+ */
+export interface LeadershipTimelineItem {
+  date: string;
+  location: string;
+  title: string;
+  teamSize: string;
   content: JSX.Element;
 }
 

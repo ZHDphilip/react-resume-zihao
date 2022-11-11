@@ -1,10 +1,12 @@
 import {FC, memo} from 'react';
 
-import {education, experience, SectionId, skills} from '../../../data/data';
+import {education, workExperience, research, leadership, SectionId, skills} from '../../../data/data';
 import Section from '../../Layout/Section';
 import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
-import TimelineItem from './TimelineItem';
+import TechTimelineItem from './TechTimelineItem';
+import EducationTimelineItem from './EducationTimelineItem';
+import LeadershipTimelineItem from './LeaderShipTimelineItem';
 
 const Resume: FC = memo(() => {
   return (
@@ -12,12 +14,22 @@ const Resume: FC = memo(() => {
       <div className="flex flex-col divide-y-2 divide-neutral-300">
         <ResumeSection title="Education">
           {education.map((item, index) => (
-            <TimelineItem item={item} key={`${item.title}-${index}`} />
+            <EducationTimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
-        <ResumeSection title="Work">
-          {experience.map((item, index) => (
-            <TimelineItem item={item} key={`${item.title}-${index}`} />
+        <ResumeSection title="Internship">
+          {workExperience.map((item, index) => (
+            <TechTimelineItem item={item} key={`${item.title}-${index}`} />
+          ))}
+        </ResumeSection>
+        <ResumeSection title="Research">
+          {research.map((item, index) => (
+            <TechTimelineItem item={item} key={`${item.title}-${index}`} />
+          ))}
+        </ResumeSection>
+        <ResumeSection title="Leadership">
+          {leadership.map((item, index) => (
+            <LeadershipTimelineItem item={item} key={`${item.title}-${index}`} />
           ))}
         </ResumeSection>
         <ResumeSection title="Skills">

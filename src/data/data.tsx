@@ -24,8 +24,11 @@ import {
   PortfolioItem,
   SkillGroup,
   Social,
-  TimelineItem,
+  EducationTimelineItem,
+  TechTimelineItem,
+  LeadershipTimelineItem,
 } from './dataDef';
+
 
 /**
  * Page meta data
@@ -34,6 +37,7 @@ export const homePageMeta: HomepageMeta = {
   title: 'Zihao Dong Resume',
   description: "Zihao Dong's Resume and description",
 };
+
 
 /**
  * Section definition
@@ -49,6 +53,7 @@ export const SectionId = {
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
+
 
 /**
  * Hero section
@@ -81,13 +86,14 @@ export const heroData: Hero = {
   ],
 };
 
+
 /**
  * About section
  */
 export const aboutData: About = {
   profileImageSrc: profilepic,
   description: `I am an undergraduate CS student at UCLA, and my research interests are Machine Learning and Computer Vision. I am also a software engineer with internship
-  experiences from major tech companies like Amazon. I am familiar with languages including but not limited to python, C++, Java, and React. In my spare time you can always
+  experiences from major tech companies like Amazon. I am familiar with languages including but not limited to python, C++, Java, and Typescript. In my spare time you can always
   find me on the soccer fields or around the stage preparing for shows!`,
   aboutItems: [
     {label: 'Location', text: 'Los Angeles, CA', Icon: MapIcon},
@@ -99,10 +105,146 @@ export const aboutData: About = {
   ],
 };
 
+
+/**
+ * Resume section: Education
+ */
+export const education: EducationTimelineItem[] = [
+  {
+    date: 'Expected Jun 2023',
+    location: 'University of California, Los Angeles',
+    gpa: '3.94/4.0',
+    relatedCourses: 'Graduate Level ML, Computer Vision, Natural Language Processing, Network, OS, Statistics, Programming',
+    title: 'Bachelor in Computer Science',
+    honor: 'Departmental Honor, Guaranteed UCLA MS.CS Admission',
+  },
+];
+
+
+/**
+ * Resume section: internship experience
+ */
+export const workExperience: TechTimelineItem[] = [
+  {
+    date: 'Jun 2022 - Sept 2022',
+    location: 'Amazon',
+    language: 'AWS/Java/Typescript',
+    title: 'Software Development Engineer Intern',
+    content: (
+      <ul>
+        <li>Individually Designing, implementing, and deploying a <span className="font-bold">1000s+ TPS</span> service for CRUD event history recording and inspecting for Amazon FLEX service. </li>
+        <li>Took ownership in the design process by comparing all available technologies and making well reasoned design choices, including using 
+          <span className="font-bold">DynamoDB, DynamoDB Stream, AWS Lambda, AWS Restful API Gateway, and Dagger</span>. </li>
+        <li>Finished implementation with quality ahead of schedule, and pushed to stretch goals and saved them in a remote directory 
+        for future development.</li>
+        <li>Provided well designed unit testcases for each module of the design, reached <span className="font-bold">95%+ testing line coverage</span>.</li>
+        <li>Owned all the review and QA sessions on my project, responded to all questions with evidence, and lead the
+          talks with teammates to improve my design. <span className="font-bold">Presented project in front of a group of 50+ engineers.</span></li>
+      </ul>
+    ),
+  },
+  {
+    date: 'Jun 2021 - Sept 2021',
+    location: 'Agile Robotics',
+    language: 'C++/OpenCV',
+    title: 'Computer Vision Engineer Intern',
+    content: (
+      <ul>
+        <li>Self studying robot hand-eye calibration, camera matrices, and 3D pose estimation through triangulation.</li>
+        <li>Individually implementing a hand-eye calibration system <span className="font-bold">capable of calibrating hand-in-eye single-cam/stereo systems. </span>
+          Reached <span className="font-bold">error less than 0.05mm.</span></li>
+        <li>System used in an iPhone 13 motherboard assembly robot that was <span className="font-bold">bought by FoxConn</span>, 
+          one the largest Apple product assemlying companies in the world, for <span className="font-bold">RMB 250,000 per set x 20 sets.</span></li>
+      </ul>
+    ),
+  },
+];
+
+
+/**
+ * Resume section: research experience
+ */
+export const research: TechTimelineItem[] = [
+  {
+    date: 'Oct 2022 - Present',
+    location: 'Prof Cho-jui Hsieh, UCLA',
+    language: 'Python',
+    title: 'Dataset Condensation Robustness',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  },
+  {
+    date: 'Mar 2022 - Jul 2022',
+    location: 'Prof. Cho-jui Hsieh, UCLA',
+    language: 'Python',
+    title: 'Shampoo Attack on Vision Transformer',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  },
+  {
+    date: 'Apr 2022 - Sept 2022',
+    location: 'Prof. Bolei Zhou, UCLA',
+    language: 'Python',
+    title: 'Improving UNICORN to Leverage Multi-view Information',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  },
+  {
+    date: 'Mar 2022 - Jun 2022',
+    location: 'Prof. Yizhou Sun, UCLA CS249',
+    language: 'Python',
+    title: 'Strict Black Box Node Injection Attack on Graph Neural Network',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  },
+  {
+    date: 'Apr 2021 - Mar 2022',
+    location: 'Dr. Yayun DU, UCLA',
+    language: 'Python',
+    title: 'Navigating Robot Under Canopy Using Visual Feedback',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  }
+]
+
+
+/**
+ * Resume section: Leadership Positions
+ */
+export const leadership: LeadershipTimelineItem[] = [
+  {
+    date: 'Dec 2021 - Apr 2022',
+    location: 'UCLA CFAN Chinese Theater Group',
+    title: 'Stage Manager',
+    teamSize: '8 sub groups 70+ ppl total',
+    content: (
+      <p>
+        TODO
+      </p>
+    )
+  }
+]
+
+
 /**
  * Skills section
  */
-export const skills: SkillGroup[] = [
+ export const skills: SkillGroup[] = [
   {
     name: 'Programing Languages',
     skills: [
@@ -148,6 +290,7 @@ export const skills: SkillGroup[] = [
   }
 ];
 
+
 /**
  * Portfolio section
  */
@@ -173,50 +316,13 @@ export const portfolioItems: PortfolioItem[] = [
   }
 ];
 
-/**
- * Resume section -- TODO: Standardize resume contact format or offer MDX
- */
-export const education: TimelineItem[] = [
-  {
-    date: 'Expected June 2023',
-    location: 'University of California, Los Angeles',
-    title: 'Bachelor in Computer Science',
-    content: <p>Departmental Honor student with 3.94/4.0 GPA. Related course work including programing, Computer Vision, Machine Learning. Took 3 Graduate Level ML courses and received A's</p>,
-  },
-];
-
-export const experience: TimelineItem[] = [
-  {
-    date: 'June 2022 - Sept 2022',
-    location: 'Amazon',
-    title: 'Software Development Engineer Intern',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-  {
-    date: 'June 2021 - Sept 2021',
-    location: 'Agile Robotics',
-    title: 'Computer Vision Engineer Intern',
-    content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
-    ),
-  },
-];
 
 /**
  * Contact section
  */
-
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Ways to contact me.',
+  description: '',
   items: [
     {
       type: ContactType.Email,
