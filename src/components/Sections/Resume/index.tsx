@@ -6,7 +6,7 @@ import ResumeSection from './ResumeSection';
 import {SkillGroup} from './Skills';
 import TechTimelineItem from './TechTimelineItem';
 import EducationTimelineItem from './EducationTimelineItem';
-import LeadershipTimelineItem from './LeaderShipTimelineItem';
+import LeadershipTimelineItem from './LeadershipTimelineItem';
 
 const Resume: FC = memo(() => {
   return (
